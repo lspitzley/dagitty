@@ -828,7 +828,7 @@ function getSortedLocalCacheSlotNames(){
 	names.sort(function( a, b ){
 		var ta = state.slots[a] && state.slots[a].updatedAt ? state.slots[a].updatedAt : "";
 		var tb = state.slots[b] && state.slots[b].updatedAt ? state.slots[b].updatedAt : "";
-		if( ta == tb ){
+		if( ta === tb ){
 			return a.localeCompare( b );
 		}
 		return tb.localeCompare( ta );
@@ -967,7 +967,7 @@ function exportDAGFile(){
 	const blob = new Blob([dagText], {type:"text/plain;charset=utf-8"} );
 	const url = URL.createObjectURL(blob);
 	const a = document.createElement( 'a' );
-		a.style = 'display: none';
+		a.style.display = "none";
 	a.href = url;
 	a.download = "dagitty-model.dag";
 	document.body.appendChild( a );
